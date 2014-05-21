@@ -1,0 +1,77 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+
+	<constant name="struts.multipart.maxSize" value="30000000" />
+
+	<package name="default" extends="struts-default">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<action name="*Accounting" method="{1}"
+			class="accounting.dashboard.HomePage">
+			<result name="HomePage" type="tiles">homePage</result>
+			<result name="debtorDashBoardBody" type="tiles">debtorDashBoard
+			</result>
+			<result name="fsdPaymentReportpage" type="tiles">fsd_settlement_report
+			</result>
+				<result name="pos_report" type="tiles">pos_report
+			</result>
+				<result name="cod_report" type="tiles">cod_report
+			</result>
+			
+		</action>
+
+		<action name="report" class="GetReports" method="getReport">
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<action name="creditorDeliveredFUllBoard" class="builder.classes.fulllist.CreditorShipmentsFullllBoardMismatch" method="getTotalDeliveredShipmentsMismatch">
+			<result name="fullboard" type="tiles">DeliveredFullBoard
+				<!-- <param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment</param>
+				<param name="bufferSize">1024</param> -->
+			</result>
+		</action>
+		
+		<action name="creditorRTOFUllBoard" class="builder.classes.fulllist.CreditorShipmentsFullllBoardMismatch" method="getTotalRTOShipmentsMismatch">
+			<result name="fullboard" type="tiles">rtoFullBoard
+				<!-- <param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment</param>
+				<param name="bufferSize">1024</param> -->
+			</result>
+		</action>
+		
+		<action name="debtorDeliveredFUllBoard" class="builder.classes.fulllist.DebtorShipmentsFullllBoardMismatch" method="getTotalDeliveredShipmentsMismatch">
+			<result name="fullboard" type="tiles">DeliveredFullBoard
+				<!-- <param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment</param>
+				<param name="bufferSize">1024</param> -->
+			</result>
+		</action>
+		<action name="debtorRTOFUllBoard" class="builder.classes.fulllist.DebtorShipmentsFullllBoardMismatch" method="getTotalRTOShipmentsMismatch">
+			<result name="fullboard" type="tiles">rtoFullBoard
+				<!-- <param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment</param>
+				<param name="bufferSize">1024</param> -->
+			</result>
+		</action>
+		
+		
+	</package>
+</struts>

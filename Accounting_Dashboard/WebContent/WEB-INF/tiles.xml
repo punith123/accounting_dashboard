@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="homePage" template="/homePageTemplate.jsp">
+		<put-attribute name="title" value="Accouting @ EKL" />
+		<put-attribute name="header" value="/homePageHeader.jsp" />
+		<put-attribute name="body" value="/homePageBody.jsp" />
+		<put-attribute name="footer" value="/homePageFooter.jsp" />
+	</definition>
+
+	<definition name="debtorDashBoard" template="/homePageTemplate.jsp">
+		<put-attribute name="header" value="/homePageHeader.jsp" />
+		<put-attribute name="body" value="/debtorDashBoard.jsp" />
+		<put-attribute name="footer" value="/homePageFooter.jsp" />
+	</definition>
+
+	<definition name="fsd_settlement_report" template="/homePageTemplate.jsp">
+		<put-attribute name="header" value="/homePageHeader.jsp" />
+		<put-attribute name="body" value="/fsd_payment_settlement_report.jsp" />
+		<put-attribute name="footer" value="/homePageFooter.jsp" />
+	</definition>
+	
+<definition name="cod_report" template="/homePageTemplate.jsp">
+		<put-attribute name="header" value="/homePageHeader.jsp" />
+		<put-attribute name="body" value="/cod_report.jsp" />
+		<put-attribute name="footer" value="/homePageFooter.jsp" />
+	</definition>
+
+	<definition name="pos_report" template="/homePageTemplate.jsp">
+		<put-attribute name="header" value="/homePageHeader.jsp" />
+		<put-attribute name="body" value="/pos_report.jsp" />
+		<put-attribute name="footer" value="/homePageFooter.jsp" />
+	</definition>
+	
+	<definition name="DeliveredFullBoard" template="/homePageTemplate.jsp">
+		<put-attribute name="header" value="/homePageHeader.jsp" />
+		<put-attribute name="body" value="/DeliveredFullBoard.jsp" />
+		<put-attribute name="footer" value="/homePageFooter.jsp" />
+	</definition>
+	
+	
+	<definition name="rtoFullBoard" template="/homePageTemplate.jsp">
+		<put-attribute name="header" value="/homePageHeader.jsp" />
+		<put-attribute name="body" value="/RtoFullBoard.jsp" />
+		<put-attribute name="footer" value="/homePageFooter.jsp" />
+	</definition>
+	
+	
+	
+</tiles-definitions>
